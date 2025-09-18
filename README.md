@@ -5,14 +5,10 @@ This repository contains analysis of the **Ladaki Bahin Yojana data (Kolhapur, 2
 I originally worked as an **Anganwadi helper (freelance support)**, assisting workers with **data cleaning**.  
 Later, I extended the dataset into a **practice and learning project**, where I added eligibility checks, duplicate detection, and visualizations.
 
----
-
 ##  Real-World Freelance Contribution
 - Helped **Anganwadi workers** clean raw Excel data containing **mixed Marathi + English addresses**  
 - Standardized **pincode** and **address fields** for reporting  
 - Delivered a cleaned Excel dataset that could be used for their **official records**  
-
----
 
 ##  Practice & Learning Extension
 For my **own learning as a data analyst**, I extended this project beyond the freelance cleaning task:  
@@ -23,7 +19,7 @@ For my **own learning as a data analyst**, I extended this project beyond the fr
   *(Note: the official scheme uses 65 years; this adjustment was made only for practice)*  
 -  Detected **family-wise duplicates** using surname + address  
 -  Built visualizations using **Python (Pandas, Matplotlib, Seaborn)**  
-
+   **Note:** This project is for **learning purposes only** and is **not an official government report**.  
 ---
 
 ##  Dataset
@@ -33,19 +29,22 @@ For my **own learning as a data analyst**, I extended this project beyond the fr
 
 ---
 
-## 🛠️ Tools & Libraries
+##  Tools & Libraries
 - **Excel** → cleaning, sorting, filtering, pivot tables  
 - **Python** →  
   - `pandas` for cleaning & manipulation  
   - `matplotlib` & `seaborn` for visualizations  
 
 ---
+## Key Insights
+-Majority of applicants are in the 35–50 years age group.
 
-## 📊 Key Analysis & Sample Code
+-Median applicant age ~40 years.
 
-### 🔹 Applications by Pincode
-```python
-plt.figure(figsize=(10,6))
-sns.countplot(y="Pincode", data=df, order=df["Pincode"].value_counts().index)
-plt.title("Applications by Pincode")
-plt.show()
+-Youngest applicant ~18 years, oldest ~65 years.
+
+-Pincodes with lower average age show higher eligibility rates.
+
+-Some duplicate household entries exist (same surname + address).
+
+-Eligibility filter (set at 60 years for practice) reduces a large share of applicants.
