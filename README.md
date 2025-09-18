@@ -21,6 +21,17 @@ For my **own learning as a data analyst**, I extended this project beyond the fr
 -  Built visualizations using **Python (Pandas, Matplotlib, Seaborn)**  
    **Note:** This project is for **learning purposes only** and is **not an official government report**.  
 ---
+### Eligibility Column Creation  
+To simulate government eligibility checks, I created an **`Eligibility` column** in the dataset using Python:  
+- Applicants **≥ 60 years** → Marked as **Eligible**  
+- Applicants **< 60 years** → Marked as **Not Eligible**  
+
+The updated dataset was then **exported to Excel** for further use:  
+
+python
+## Create Eligibility column
+df['Eligibility'] = df['Age'].apply(lambda x: 'Eligible' if x >= 60 else 'Not Eligible')]  ```
+
 
 ##  Dataset
 - **Source**: Raw application data provided to Anganwadi workers (anonymized for privacy)  
@@ -36,6 +47,7 @@ For my **own learning as a data analyst**, I extended this project beyond the fr
   - `matplotlib` & `seaborn` for visualizations  
 
 ---
+
 ## Key Insights
 -Majority of applicants are in the 35–50 years age group.
 
