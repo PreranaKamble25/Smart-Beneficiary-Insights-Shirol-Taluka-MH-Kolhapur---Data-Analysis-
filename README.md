@@ -1,62 +1,100 @@
-# Ladaki-Bahin-Yojna-MH-Kolhapur---Data-Analysis-
-Data cleaning and analysis of "Ladaki Bahin Yojna beneficiary dataset (Kolhapur 2025)" using Python &amp; Excel.
-##  Project Overview
-This repository contains analysis of the **Ladaki Bahin Yojana data (Kolhapur, 2025)**.  
-I originally worked as an **Anganwadi helper (freelance support)**, assisting workers with **data cleaning**.  
-Later, I extended the dataset into a **practice and learning project**, where I added eligibility checks, duplicate detection, and visualizations.
+# 👩‍👧 Data-Driven Insights for Women & Child Development – Shirol Taluka, Kolhapur
 
-##  Real-World Freelance Contribution
-- Helped **Anganwadi workers** clean raw Excel data containing **mixed Marathi + English addresses**  
-- Standardized **pincode** and **address fields** for reporting  
-- Delivered a cleaned Excel dataset that could be used for their **official records**  
+## 📖 Project Overview
 
-##  Practice & Learning Extension
-For my **own learning as a data analyst**, I extended this project beyond the freelance cleaning task:  
+This project originates from a real-world freelance assignment for the **Department of Women and Child Development**, Shirol Taluka, District Kolhapur (Maharashtra).
+The department needed assistance in **cleaning and organizing beneficiary records** collected from nearby Anganwadi centers.
 
--  Analyzed **applications by pincode**  
--  Visualized **age distribution of applicants**  
--  Implemented a **practice eligibility filter (60 years)**  
-  *(Note: the official scheme uses 65 years; this adjustment was made only for practice)*  
--  Detected **family-wise duplicates** using surname + address  
--  Built visualizations using **Python (Pandas, Matplotlib, Seaborn)**  
-   **Note:** This project is for **learning purposes only** and is **not an official government report**.  
----
-### Eligibility Column Creation  
-To simulate government eligibility checks, I created an **`Eligibility` column** in the dataset using Python:  
-- Applicants **≥ 60 years** → Marked as **Eligible**  
-- Applicants **< 60 years** → Marked as **Not Eligible**  
-
-The updated dataset was then **exported to Excel** for further use:  
-
-python
-## Create Eligibility column
-df['Eligibility'] = df['Age'].apply(lambda x: 'Eligible' if x >= 60 else 'Not Eligible')]  ```
-
-
-##  Dataset
-- **Source**: Raw application data provided to Anganwadi workers (anonymized for privacy)  
-- **Format**: Excel (`.xlsx`)  
-- **Size**: ~6170 rows, 10 columns  
+The raw dataset contained **mixed Marathi and English text**, multiple inconsistencies, and unsorted regional data.
+After completing the cleaning task, I extended the dataset into a **personal data analytics project**, adding an **Eligibility feature** and developing **interactive visualizations** and an **AI-generated dashboard** to demonstrate insights and analytical thinking.
 
 ---
 
-##  Tools & Libraries
-- **Excel** → cleaning, sorting, filtering, pivot tables  
-- **Python** →  
-  - `pandas` for cleaning & manipulation  
-  - `matplotlib` & `seaborn` for visualizations  
+## 🎯 Objectives
+
+* Clean and standardize a real government dataset containing regional beneficiary details.
+* Sort data **pincode-wise** and **address-wise** to improve readability and accessibility.
+* Handle **bilingual entries** (Marathi + English) effectively.
+* Create a new **Eligibility** column based on age criteria using Python.
+* Visualize data trends and summary insights through graphs and dashboards.
 
 ---
 
-## Key Insights
--Majority of applicants are in the 35–50 years age group.
+## 🧰 Tools & Technologies Used
 
--Median applicant age ~40 years.
+| Category      | Tools / Libraries             |
+| ------------- | ----------------------------- |
+| Data Cleaning | Python (Pandas, NumPy)        |
+| Visualization | Matplotlib, Seaborn, Power BI |
+| AI Dashboard  | MetricDash AI                 |
+| File Handling | Excel, CSV                    |
+| Environment   | Jupyter Notebook              |
 
--Youngest applicant ~18 years, oldest ~65 years.
+---
 
--Pincodes with lower average age show higher eligibility rates.
+## 🧹 Data Cleaning & Preparation Steps
 
--Some duplicate household entries exist (same surname + address).
+1. **Loaded raw CSV file** using Pandas.
+2. **Removed duplicates** and corrected null/missing values.
+3. **Standardized text encoding** for bilingual (Marathi + English) fields.
+4. **Sorted data** by pincode and address for region-specific reporting.
+5. **Cleaned inconsistent date formats** and verified age entries
+   
 
--Eligibility filter (set at 60 years for practice) reduces a large share of applicants.
+## 🧮 Feature Engineering – Eligibility Logic
+
+After cleaning, a new **Eligibility** column was created to classify beneficiaries based on age.
+
+```python
+df = pd.read_excel(r"C:\Users\Prerana\OneDrive\Desktop\LadakiBahin\Shirol_with_Age.xlsx")
+
+# Eligibility column (Age between 21 and 60 is Eligible)
+df['Eligibility'] = df['Age'].apply(lambda x: 'Eligible' if 21 <= x <= 60 else 'Not Eligible')
+
+# Check result
+print(df[['Age', 'Eligibility']].head(10))
+```
+
+This helped in identifying beneficiaries meeting specific criteria (e.g., adult education, welfare benefits).
+
+---
+
+## 📊 Visualizations & Dashboard Insights
+
+I used **Python**, **Power BI**, and **AI (MetricDash)** to visualize trends and insights.
+
+### 📈 Key Visual Insights
+
+* **Pincode-wise Beneficiary Distribution**
+* **Age-wise Eligibility Breakdown**
+* **Marathi vs. English Entries Count**
+* **Total Records and Eligibility Ratio**
+
+🔗 **AI Dashboard Demo**:  https://preranakamble25.github.io/Smart-Beneficiary-Insights-Shirol-Taluka-MH-Kolhapur---Data-Analysis-/
+
+## 🧠 Key Learnings
+
+* Worked with **real bilingual data** (Marathi + English) for a government dataset.
+* Improved dataset accuracy and readability through **data cleaning automation**.
+* Developed **analytical problem-solving** by creating custom eligibility criteria.
+* Enhanced presentation through **AI-driven dashboard visualization**.
+
+---
+
+## 🏁 Final Outcome
+
+✅ Cleaned and standardized dataset ready for official reporting.
+
+✅ Age-based Eligibility column added using Python logic.
+
+✅ Interactive dashboard showing key regional insights.
+
+## 🧾 Author
+
+**👩‍💻 Prerana Kamble**
+
+Data Analyst | Python | SQL | Power BI
+
+📍 Kolhapur, Maharashtra, India
+
+ [LinkedIn](www.linkedin.com/in/prerana-kamble-234058239)
