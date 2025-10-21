@@ -97,4 +97,4 @@ Data Analyst | Python | SQL | Power BI
 
 📍 Kolhapur, Maharashtra, India
 
- [LinkedIn](www.linkedin.com/in/prerana-kamble-234058239)
+ [LinkedIn](https://www.linkedin.com/in/prerana-kamble-234058239/)
